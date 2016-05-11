@@ -23,7 +23,7 @@ module.exports = function (destination) {
 	if (!destination) {
     destination = 'appended.json';
   }
-  fs.readdir(destination, (err) => {
+  fs.readdir(destination, function(err) {
     if (err) {
       fs.writeFileSync(destination, '[]');
     }
