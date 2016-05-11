@@ -19,7 +19,7 @@
     "index.js"
   ],
   "keywords": [
-    "gulpplugin",
+    "gulp-plugin",
     "gulp-append"
   ],
   "devDependencies": {
