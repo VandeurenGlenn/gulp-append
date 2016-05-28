@@ -6,8 +6,8 @@ var nameFromPath = require('name-from-path');
 
 function setupData(file, dest, cb) {
   var data = JSON.parse(fs.readFileSync(dest));
-  return nameFromPath([file.path, file.base], false, (fileName) => {
-    nameFromPath([file.path, file.base], true, (name) => {
+  return nameFromPath([file.path, file.base], false, function(fileName) {
+    nameFromPath([file.path, file.base], true, function(name) {
       data.push({
         'name': String(name),
         'file': String(fileName),
@@ -41,7 +41,7 @@ module.exports = function (destination) {
 		}
 
 		try {
-			setupData(file, destination, (data) => {
+			setupData(file, destination, function(data) {
         fs.writeFileSync(destination, JSON.stringify(data, null, '\t'));
         file.contents = new Buffer(data);
 				this.push(file);
