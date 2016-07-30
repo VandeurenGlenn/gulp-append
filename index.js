@@ -5,13 +5,9 @@ var fs = require('fs');
 var nameFromPath = require('name-from-path');
 
 function setupData(file, dest, cb) {
-  try {
-    var data = JSON.parse(fs.readFileSync(dest));
-    data.push(String(file.contents).trim());
-    return cb(null, data);
-  } catch (err) {
-    return cb(err);
-  }
+  var data = JSON.parse(fs.readFileSync(dest));
+  data.push(String(file.contents).trim());
+  return cb(data);
 }
 
 module.exports = function (destination) {
@@ -37,9 +33,7 @@ module.exports = function (destination) {
 
 		try {
 			setupData(file, destination, function(data) {
-        fs.writeFileSync(destination, JSON.stringify(data, null, '\t'));
-        file.contents = new Buffer(data);
-				this.push(file);
+        fs.writeFileSync(destination, JSON.stringify(data, null, 2));
       });
 		} catch (err) {
 			this.emit('error', new gutil.PluginError('gulp-append', err));
