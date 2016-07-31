@@ -16,8 +16,9 @@
     "test": "mocha"
   },
   "files": [
-    "index.js"
+    "lib"
   ],
+  "main": "lib/index.js",
   "keywords": [
     "gulp-plugin",
     "gulp-append"
