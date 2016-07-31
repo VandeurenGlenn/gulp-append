@@ -26,7 +26,6 @@
   "dependencies": {
     "gulp-util": "^3.0.7",
     "through2": "^2.0.1",
-    "name-from-path": "^0.1.0",
     "mocha": "*"
   }
 }
