@@ -30,7 +30,7 @@ var append = require('gulp-append');
 
 gulp.task('default', function () {
 	return gulp.src('src/file.json')
-		.pipe(append({destination: 'some/path/appended-file.json'}));
+		.pipe(append('some/path/appended-file.json'));
 });
 ```
 
@@ -66,7 +66,7 @@ var nameFromPath = require('name-from-path');
 gulp.task('append:transform', () => {
   return gulp.src(
     'README.md'
-  ).pipe(append({
+  ).pipe(append('some/path/to/file.json', {
     transform: {
       path: function(file) {
         return String(file.path)
@@ -74,8 +74,7 @@ gulp.task('append:transform', () => {
       name: function(file) {
         return nameFromPath(file, true);
       }
-    },
-		destination: 'some/path/to/file.json'
+    }
   }));
 });
 ```
@@ -84,7 +83,7 @@ gulp.task('append:transform', () => {
 
 ### options
 
-#### destination
+#### append(destination)
 
 Type: `string`  
 Default: `appended.json`
@@ -92,10 +91,10 @@ Default: `appended.json`
 The destination to write to.
 
 ```js
-append({destination: 'some-file.json'});
+append('some-file.json');
 ```
 
-#### json
+#### append(opts) - json
 
 Type: `boolean`  
 Default: `false`
@@ -106,7 +105,7 @@ Wether or not the destination should be handled as json.
 append({json: true});
 ```
 
-#### transform
+#### append(opts) - transform
 
 Type: `object`  
 Default: `undefined`
