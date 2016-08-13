@@ -105,6 +105,19 @@ Wether or not the destination should be handled as json.
 append({json: true});
 ```
 
+#### append(opts) - named
+
+Type: `boolean`  
+Default: `false`
+
+Wether or not to name the items.
+
+*** creates an named object when true (checkout the [transform]() option to learn how to set an custom name)***
+
+```js
+append({named: true});
+```
+
 #### append(opts) - transform
 
 Type: `object`  
@@ -117,7 +130,10 @@ append({
 	transform: {
 	  path: function(file) {
 			return String(file.path);
-	  }
+	  },
+		info: function(file) {
+			return 'some info ...';
+		}
 	}
 });
 ```
