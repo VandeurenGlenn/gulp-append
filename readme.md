@@ -112,7 +112,7 @@ Default: `false`
 
 Wether or not to name the items.
 
-*** creates an named object when true (checkout the [transform]() option to learn how to set an custom name)***
+*** creates an named object when true (checkout the [transform](https://github.com/VandeurenGlenn/gulp-append#appendopts---transform) option to learn how to set an custom name)***
 
 ```js
 append({named: true});
