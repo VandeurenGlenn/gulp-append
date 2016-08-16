@@ -1,6 +1,6 @@
 {
   "name": "gulp-append",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Append a file the easy way",
   "license": "MIT",
   "repository": "VandeurenGlenn/gulp-append",
